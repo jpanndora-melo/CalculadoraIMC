@@ -15,11 +15,16 @@ altura = Convert.ToDouble(Console.ReadLine());
 imc = peso / Math.Pow(altura, 2);
 
 Console.WriteLine($"\nSeu IMC é {imc:F2}\n");
-if (imc < 18.5)
+
+if (imc < 17)
+{
+    diagnostico = "Muito abaixo do peso";
+}
+else if (imc < 18.49)
 {
     diagnostico = "Abaixo do peso";
 }
-else if (imc < 24.9)
+else if (imc < 24.99)
 {
     diagnostico = "Peso normal";
 }
@@ -27,8 +32,23 @@ else if (imc < 29.9)
 {
     diagnostico = "Sobrepeso";
 }
+else if (imc < 34.99)
+{
+    diagnostico = "Obesidade I";
+}
+else if (imc < 39.99)
+{
+    diagnostico = "Obesidade II (severa)";
+}
+else if (imc >= 40)
+{
+    diagnostico = "Obesidade III (mórbida)";
+}
 else
 {
-    diagnostico = "Obesidade";
+    diagnostico = "Valor de IMC inválido";
 }
+Console.WriteLine($"Diagnóstico: {diagnostico}");
+
+
 
